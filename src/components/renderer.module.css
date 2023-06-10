@@ -1,0 +1,11 @@
+.rectangle {
+  cursor: pointer;
+}
+
+.rectangle:hover {
+  fill: rgb(167,211,241);
+}
+
+.hoverRect:hover {
+  stroke:#26a9e0
+}
