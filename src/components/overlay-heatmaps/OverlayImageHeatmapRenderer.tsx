@@ -13,7 +13,7 @@ type RendererProps = {
   width: number;
 };
 
-export const ImageRenderer = ({
+export const OverlayImageHeatmapRenderer = ({
   width,
   height,
   data,
@@ -62,10 +62,25 @@ export const ImageRenderer = ({
       isHighlighted = true;
     }
 
+    const vals = data
+      .map((d) => d.val)
+      .filter((d): d is number => d !== null);
+    const max = d3.max(vals) || 0;
+
+    // const colorScale = d3.scaleLinear<string>()
+    //   .domain(THRESHOLDS.map((t) => t * max))
+    //   .range(COLORS);
+
+    const opacityScale = d3.scaleLinear<string>()
+      .domain([-3, max]);
+    // .range([0, 1]);
+
     return (
       <g key={i}>
         <rect
-          fill={'none'}
+          // fill={colorScale(d.val)}
+          fill={'blue'}
+          fillOpacity={d.val === -10 ? 1 : 1 - opacityScale(d.val)}
           height={yScale.bandwidth()}
           key={i}
           stroke={isHighlighted ? "blue" : "gray"}
@@ -73,11 +88,12 @@ export const ImageRenderer = ({
           x={xPos}
           y={yPos}
         />
-        <text
-          x={xPos + xScale.bandwidth() / 2}
-          y={yPos + yScale.bandwidth() / 2}>
-          {d.val}
-        </text>
+        {/* <text
+          fontSize="x-small"
+          x={xPos + xScale.bandwidth() / 2 - 0.01}
+          y={yPos + yScale.bandwidth() / 2 - 0.01}>
+          {Number(d.val)}
+        </text> */}
       </g>
     );
   });

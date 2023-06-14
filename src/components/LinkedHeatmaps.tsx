@@ -49,7 +49,10 @@ export const LinkedHeatmaps = () => {
               {headNames.map((headName) => {
                 const dataPts = data[layerName][headName].map((d) => ({ val: d.val, x: d.x, y: String(d.y) }));
                 return (
-                  <Heatmap data={dataPts} height={300} hoveredCell={hoveredCell} key={`${layerName}${headName}`} setHoveredCell={setHoveredCell} width={250} />
+                  <div key={`${layerName}${headName}`}>
+                    {headName}
+                    <Heatmap data={dataPts} height={300} hoveredCell={hoveredCell} setHoveredCell={setHoveredCell} width={250} />
+                  </div>
                 );
               })}
             </div>

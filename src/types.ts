@@ -16,3 +16,11 @@ export type Dataset = {
     [K in LayerNames]: DataPoint[]
   }
 }
+
+export type InteractionData = {
+  val: number | null;
+  xLabel: string;
+  xPos: number;
+  yLabel: string;
+  yPos: number;
+};

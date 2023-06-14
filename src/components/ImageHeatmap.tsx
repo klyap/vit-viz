@@ -3,7 +3,7 @@
 // import { ColorLegend } from "./ColorLegend";
 import { max as d3_max, scaleLinear } from "d3";
 import { COLORS, THRESHOLDS, COLOR_LEGEND_HEIGHT } from "../constants";
-import { DataPoint } from "../types";
+import { DataPoint, InteractionData } from "../types";
 import { ImageRenderer } from "./ImageRenderer";
 import truckImgUrl from '../assets/truck_224.png';
 
@@ -37,11 +37,13 @@ export const ImageHeatmap = ({ width, height, data, hoveredCell, setHoveredCell 
     .range(COLORS);
 
   return (
-    <div >
+    <div className="h-full">
       <img
-        alt={'image that was tested'} height={height}
+        alt={'image that was tested'}
+        className={'absolute'}
+        height={height}
         src={truckImgUrl}
-        style={{ position: "absolute" }} width={width}
+        width={width}
       />
       <ImageRenderer
         colorScale={colorScale}
@@ -52,6 +54,8 @@ export const ImageHeatmap = ({ width, height, data, hoveredCell, setHoveredCell 
         setHoveredCell={setHoveredCell}
         width={width}
       />
+
+
       {/* <Tooltip
         interactionData={hoveredCell}
         width={width}
