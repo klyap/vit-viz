@@ -6,6 +6,8 @@ import { COLORS, THRESHOLDS, COLOR_LEGEND_HEIGHT } from "../constants";
 import { DataPoint, InteractionData } from "../types";
 import { ImageRenderer } from "./ImageRenderer";
 import truckImgUrl from '../assets/truck_224.png';
+import catImgUrl from '../assets/cat.png';
+
 
 type HeatmapProps = {
   data: DataPoint[];
@@ -42,7 +44,8 @@ export const ImageHeatmap = ({ width, height, data, hoveredCell, setHoveredCell 
         alt={'image that was tested'}
         className={'absolute'}
         height={height}
-        src={truckImgUrl}
+        // src={truckImgUrl}
+        src={catImgUrl}
         width={width}
       />
       <ImageRenderer
