@@ -3,14 +3,15 @@
 .grid-container {
   display: flex;
   flex-wrap: wrap;
-  width: 360px;
+  width: 180px;
+  height: 180px;
 }
 
 .grid-item {
   /* flex: 0 0 calc(33.33% - 10px); Adjust the percentage for the desired width */
   /* margin: 5px; Adjust margin as needed */
-  height: 100px; /* Set the desired height */
-  width: 100px;
+  height: 60px; /* Set the desired height */
+  width: 60px;
   background-color: #ccc; /* Background color for the grid items */
   display: flex;
   align-items: center;
