@@ -144,9 +144,9 @@ export default function Scroll() {
           <Text>This is an image</Text>
           <Text>{`It is split into "patches". Each patch is considered a token, the same way a word is a token in a sentence.`}</Text>
           <Text>{`These patches are arranged into an array`}</Text>
-          <Text>And put through a linear projection layer to get patch embedding vectors.</Text>
+          {/* <Text>And put through a linear projection layer to get patch embedding vectors.</Text> */}
         </div>
-        <div className="flex flex-col" id="img-to-patch-processing">
+        <div className="flex flex-col element" id="img-to-patch-processing">
           <p id="text">Text blurb 1</p>
           <div className="grid-container" id="patch-container" >
             {[...Array(9)].map((_, index) => (
@@ -154,18 +154,16 @@ export default function Scroll() {
                 <img
                   alt={`Image ${index + 1}`} // Provide appropriate alt text
                   className="grid-item patch"
-                  src={`/src/assets/vit-viz-cat/${index + 1}.png`}
+                  src={`/assets/vit-viz-cat/${index + 1}.png`}
                 />
-
               </div>
             ))}
           </div>
-
         </div>
 
       </div>
 
-      <div className="bg-yellow-50 h-screen flex items-center justify-center">
+      <div className="bg-yellow-50 flex items-center justify-center">
         <div className="flex flex-col w-80">
           <H1>CONVERTING IMAGE TO NUMBERS (FLATTENING / UNROLLING)</H1>
           <NormalText>// Use a 9 pixel drawing with easy colors and show each pixel going to number and those numbers going into a vector</NormalText>
@@ -186,10 +184,10 @@ export default function Scroll() {
         {/* <p className="w-48">We can represent an image in numbers by describing the color of each pixel. Color is represented by its red, green, and blue values</p> */}
         <img alt={`Zoomed in patch`} // Provide appropriate alt text
           className="h-72"
-          src={`/src/assets/vit-viz-cat/${1}.png`}></img>
+          src={`/assets/vit-viz-cat/${1}.png`}></img>
         <img alt={`Zoomed in patch`} // Provide appropriate alt text
           className="h-72"
-          src={`/src/assets/color-picker-rgb.png`}></img>
+          src={`/assets/color-picker-rgb.png`}></img>
       </div>
 
       <div className="bg-green-50 h-screen flex items-center justify-center">
@@ -206,10 +204,10 @@ export default function Scroll() {
         {/* <p className="w-48">We can represent an image in numbers by describing the color of each pixel. Color is represented by its red, green, and blue values</p> */}
         <img alt={`Zoomed in patch`} // Provide appropriate alt text
           className="h-72"
-          src={`/src/assets/truck_224.png`}></img>
+          src={`/assets/truck_224.png`}></img>
         <img alt={`Zoomed in patch`} // Provide appropriate alt text
           className="h-72"
-          src={`/src/assets/color-picker-rgb.png`}></img>
+          src={`/assets/color-picker-rgb.png`}></img>
       </div>
 
       <div className="bg-purple-50 h-screen flex items-center justify-center">
@@ -234,7 +232,7 @@ export default function Scroll() {
                 <img
                   alt={`Image ${index + 1}`} // Provide appropriate alt text
                   className="grid-item patch"
-                  src={`/src/assets/vit-viz-cat/${index + 1}.png`}
+                  src={`/assets/vit-viz-cat/${index + 1}.png`}
                 />
 
               </div>
@@ -248,7 +246,7 @@ export default function Scroll() {
                 <img
                   alt={`Image ${index}`} // Provide appropriate alt text
                   className="grid-item patch"
-                  src={`/src/assets/vit-viz-cat/${index}.png`}
+                  src={`/assets/vit-viz-cat/${index}.png`}
                 />
 
               </div>

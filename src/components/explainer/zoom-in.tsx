@@ -136,7 +136,7 @@ export default function Scroll() {
                 <img
                   alt={`Image ${index + 1}`} // Provide appropriate alt text
                   className="grid-item patch"
-                  src={`/src/assets/vit-viz-cat/${index + 1}.png`}
+                  src={`/assets/vit-viz-cat/${index + 1}.png`}
                 />
 
               </div>
@@ -145,7 +145,7 @@ export default function Scroll() {
 
           <img alt={`Zoomed in patch`} // Provide appropriate alt text
             className="h-72"
-            src={`/src/assets/vit-viz-cat/${1}.png`}></img>
+            src={`/assets/vit-viz-cat/${1}.png`}></img>
         </div>
       </div>
 
